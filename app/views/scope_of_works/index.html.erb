@@ -1,0 +1,31 @@
+<h1>Listing scope_of_works</h1>
+
+<table>
+  <tr>
+    <th>Worktype</th>
+    <th>Item</th>
+    <th>Completed</th>
+    <th>Contractor</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scope_of_works.each do |scope_of_work| %>
+  <tr>
+    <td><%= scope_of_work.worktype %></td>
+    <td><%= scope_of_work.item %></td>
+    <td><%= scope_of_work.completed %></td>
+    <td><%= scope_of_work.contractor %></td>
+    <td><%= scope_of_work.notes %></td>
+    <td><%= link_to 'Show', scope_of_work %></td>
+    <td><%= link_to 'Edit', edit_scope_of_work_path(scope_of_work) %></td>
+    <td><%= link_to 'Destroy', scope_of_work, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scope of work', new_scope_of_work_path %>

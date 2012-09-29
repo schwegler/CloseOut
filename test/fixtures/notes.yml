@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id         :integer          not null, primary key
+#  subject    :string(255)
+#  date       :datetime
+#  note       :text
+#  submitedon :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  created_on :datetime
+#  site_id    :integer
+#  tech_id    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject: MyString
+  date: 2012-09-27 12:31:48
+  note: MyText
+  submitedon: 2012-09-27 12:31:48
+
+two:
+  subject: MyString
+  date: 2012-09-27 12:31:48
+  note: MyText
+  submitedon: 2012-09-27 12:31:48

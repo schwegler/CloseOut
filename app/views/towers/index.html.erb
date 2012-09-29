@@ -1,0 +1,33 @@
+<h1>Listing towers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Numbeant</th>
+    <th>Numbnewant</th>
+    <th>Oldcables</th>
+    <th>Newcables</th>
+    <th>Site</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @towers.each do |tower| %>
+  <tr>
+    <td><%= tower.name %></td>
+    <td><%= tower.numbeant %></td>
+    <td><%= tower.numbnewant %></td>
+    <td><%= tower.oldcables %></td>
+    <td><%= tower.newcables %></td>
+    <td><%= tower.site_id %></td>
+    <td><%= link_to 'Show', tower %></td>
+    <td><%= link_to 'Edit', edit_tower_path(tower) %></td>
+    <td><%= link_to 'Destroy', tower, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tower', new_tower_path %>

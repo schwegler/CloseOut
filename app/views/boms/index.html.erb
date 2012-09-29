@@ -1,0 +1,31 @@
+<h1>Listing boms</h1>
+
+<table>
+  <tr>
+    <th>Worktype</th>
+    <th>Item</th>
+    <th>Estq</th>
+    <th>Usedq</th>
+    <th>Vendor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boms.each do |bom| %>
+  <tr>
+    <td><%= bom.worktype %></td>
+    <td><%= bom.item %></td>
+    <td><%= bom.estq %></td>
+    <td><%= bom.usedq %></td>
+    <td><%= bom.vendor %></td>
+    <td><%= link_to 'Show', bom %></td>
+    <td><%= link_to 'Edit', edit_bom_path(bom) %></td>
+    <td><%= link_to 'Destroy', bom, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bom', new_bom_path %>

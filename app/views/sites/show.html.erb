@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+<div class="summary">
+<p>
+  <b>Name:</b>
+  <%= @site.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @site.number %>
+</p>
+
+<p>
+  <b>Location:</b><br />
+  <img src="http://maps.google.com/maps/api/staticmap?center=<%= @site.location %>&zoom=17&size=300x200&sensor=true&maptype=hybrid" style="width: 300px; height: 200px;" /><br />
+  <i><a href="https://maps.google.com/maps?q=<%= @site.location %>" target="blank" ><%= @site.location %></a></i>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @site.type %>
+</p>
+
+<p>
+  <b>County:</b>
+  <%= @site.county %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @site.name %>
+</p>
+ 
+<p>
+  <b>Tech:</b>
+  <%= link_to @site.tech.name, @site.tech %>
+</p>
+
+<p>
+  <b>SOWs:</b>
+     <ul>
+     <% @site.scope_of_works.each do |scope_of_work| %>
+        <li><span>Kind: </span><%=h scope_of_work.worktype%><br /><%= link_to scope_of_work.item, scope_of_work %><br /><span>Completed:</span> <%=h scope_of_work.completed%><br /><span>Contractor:</span> <%=h scope_of_work.contractor%><br /><%=h scope_of_work.created_at %></li>
+  	 <% end unless @site.scope_of_works.nil? %>
+  	 </ul>
+    <%= link_to "Create New SOW", new_scope_of_work_path %>
+</p>
+
+<p>
+  <b>BOMs:</b>
+     <ul>
+     <% @site.boms.each do |bom| %>
+        <li><span>Kind: </span><%=h bom.worktype%><br /><%= link_to bom.item, bom %><br /><span>Qty. Est.:</span> <%=h bom.estq%><span>Qty. Used:</span> <%=h bom.usedq%><br /><span>Vendor:</span> <%=h bom.vendor%><br /><%=h bom.created_at %></li>
+  	 <% end unless @site.boms.nil? %>
+  	 </ul>
+    <%= link_to "Create New BOM", new_bom_path %>
+</p>
+
+<p>
+  <b>Notes:</b>
+     <ul>
+     <% @site.notes.each do |note| %>
+        <li><%= link_to note.subject, note %><br /><%=h note.note %><br /><i><%=h note.created_at %></i></li>
+  	 <% end unless @site.notes.nil? %>
+  	 </ul>
+    <%= link_to "Create New Note", new_note_path %>
+</p>
+
+<ul>
+  <% for clip in @site.clips %>
+    <li>
+    <%= image_tag(clip.file_url) %><br /><%= clip.description %> <i class="icon-arrow-down"> </i>  <%= link_to("Download", clip.file_url) %>
+    </li>
+  <% end %>
+</ul>
+</div>
+<i class="icon-pencil"> </i> <%= link_to 'Edit', edit_site_path(@site) %>  
+<i class="icon-arrow-left"> </i> <%= link_to 'Back', sites_path %>

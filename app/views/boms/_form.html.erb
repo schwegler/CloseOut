@@ -1,0 +1,15 @@
+<%= semantic_form_for @bom do |f| %>
+  <%= f.inputs do %>
+    <span><b>Tech: </b></span><%= f.collection_select(:tech_id, Tech.find(:all), :id, :name, {:prompt => true}) %>
+    <span><b>&nbsp; Site: </b></span><%= f.collection_select(:site_id, Site.find(:all), :id, :name, {:prompt => true}) %>
+    <%= f.input :worktype %>
+    <%= f.input :item %>
+    <%= f.input :estq, :label => "Est. Qty." %>
+    <%= f.input :usedq, :label => "Used Qty." %>
+    <%= f.input :vendor %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

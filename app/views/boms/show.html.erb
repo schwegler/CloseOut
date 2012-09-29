@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Worktype:</b>
+  <%= @bom.worktype %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @bom.item %>
+</p>
+
+<p>
+  <b>Estq:</b>
+  <%= @bom.estq %>
+</p>
+
+<p>
+  <b>Usedq:</b>
+  <%= @bom.usedq %>
+</p>
+
+<p>
+  <b>Vendor:</b>
+  <%= @bom.vendor %>
+</p>
+
+
+<%= link_to 'Edit', edit_bom_path(@bom) %> |
+<%= link_to 'Back', boms_path %>

@@ -1,0 +1,14 @@
+<%= semantic_form_for @tower do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :numbeant %>
+    <%= f.input :numbnewant %>
+    <%= f.input :oldcables %>
+    <%= f.input :newcables %>
+    <%= f.input :site_id %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

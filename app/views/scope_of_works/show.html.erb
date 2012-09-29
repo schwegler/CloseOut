@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Worktype:</b>
+  <%= @scope_of_work.worktype %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @scope_of_work.item %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @scope_of_work.completed %>
+</p>
+
+<p>
+  <b>Contractor:</b>
+  <%= @scope_of_work.contractor %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @scope_of_work.notes %>
+</p>
+
+<p>
+  <b>Tech:</b>
+  <%= link_to @scope_of_work.tech.name, @scope_of_work.tech %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= link_to @scope_of_work.site.name, @scope_of_work.site %>
+</p>
+
+<%= link_to 'Edit', edit_scope_of_work_path(@scope_of_work) %> |
+<%= link_to 'Back', scope_of_works_path %>

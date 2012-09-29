@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tower.name %>
+</p>
+
+<p>
+  <b>Numbeant:</b>
+  <%= @tower.numbeant %>
+</p>
+
+<p>
+  <b>Numbnewant:</b>
+  <%= @tower.numbnewant %>
+</p>
+
+<p>
+  <b>Oldcables:</b>
+  <%= @tower.oldcables %>
+</p>
+
+<p>
+  <b>Newcables:</b>
+  <%= @tower.newcables %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @tower.site_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_tower_path(@tower) %> |
+<%= link_to 'Back', towers_path %>

@@ -1,0 +1,18 @@
+<h2>Updates</h2>
+
+<% @posts.each do |post| %>
+	<div class="postcontainer">
+    	<div><h3><%= post.title %></h3></div>
+    	<div><p><%= post.body %></p></div>
+    	<ul class="crudlinks">
+    	<li><%= link_to 'Link', post %></li>
+    	<li><%= link_to 'Edit', edit_post_path(post) %></li>
+    	<li><%= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></li>
+    	</ul>
+	</div>
+	<div class="clear"></div>
+<% end %>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>

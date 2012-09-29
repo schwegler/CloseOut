@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%=h @tech.name %>
+</p>
+ 
+<p>
+  <b>Phone:</b>
+  <%=h @tech.phone %>
+</p>
+ 
+<p>
+  <b>Sites:</b>
+     <ul>
+     <% @tech.sites.each do |site| %>
+        <li><%= link_to site.name, site %></li>
+  	 <% end %>
+  	 </ul>
+    <%= link_to "Create new site", new_site_path %>
+</p>
+
+<%= link_to 'Edit', edit_tech_path(@tech) %> |
+<%= link_to 'Back', teches_path %>

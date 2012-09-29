@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: towers
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  numbeant   :integer
+#  numbnewant :integer
+#  oldcables  :text
+#  newcables  :text
+#  site_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  numbeant: 1
+  numbnewant: 1
+  oldcables: MyText
+  newcables: MyText
+  site_id: 1
+
+two:
+  name: MyString
+  numbeant: 1
+  numbnewant: 1
+  oldcables: MyText
+  newcables: MyText
+  site_id: 1

@@ -1,0 +1,16 @@
+<%= semantic_form_for @scope_of_work do |f| %>
+  <%= f.inputs do %>
+	<%= f.input :tech_id, :as => :select, :collection => Tech.all, :label_method => :format_name, :value_method => :id %>
+    <%= f.input :site_id, :as => :select, :collection => Site.all, :label_method => :format_name, :value_method => :id %>
+    <%= f.input :worktype %>
+    <%= f.input :item %>
+    <%= f.input :completed %>
+    <%= f.input :contractor %>
+    <%= f.input :notes %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :label => "Submit", :as => :input %>
+    <%= f.action :cancel, :label => "Cancel" %>
+  <% end %>
+<% end %>

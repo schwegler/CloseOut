@@ -1,0 +1,21 @@
+<!-- Navbar
+    ================================================== -->
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "SiteTracker", root_path, :class => "branded" %>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= 'active' if current_page?(help_path) %>"><%= link_to "Help", help_path %></li>
+          <li class=""><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
