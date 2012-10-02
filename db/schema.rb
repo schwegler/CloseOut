@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928213602) do
+ActiveRecord::Schema.define(:version => 20121002131752) do
+
+  create_table "antennas", :force => true do |t|
+    t.integer  "radio_id"
+    t.string   "desc"
+    t.string   "antenna"
+    t.string   "azimuth"
+    t.string   "elevation"
+    t.string   "frequencytx"
+    t.string   "frequencyrx"
+    t.string   "height"
+    t.string   "txpower"
+    t.string   "serialnumber"
+    t.string   "phasingcolor1"
+    t.string   "phasingcolor2"
+    t.string   "sectorsize"
+    t.string   "antennatype"
+    t.string   "dishsize"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "boms", :force => true do |t|
     t.string   "worktype"
@@ -53,6 +74,14 @@ ActiveRecord::Schema.define(:version => 20120928213602) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.datetime "timestamp"
+  end
+
+  create_table "radios", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "tower_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "scope_of_works", :force => true do |t|

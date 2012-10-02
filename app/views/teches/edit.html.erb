@@ -1,6 +1,9 @@
+<div class="container">
 <h1>Editing tech</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @tech %> |
-<%= link_to 'Back', teches_path %>
+<%= link_to 'Back', teches_path %> | 
+<%= link_to 'Destroy', tech, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+

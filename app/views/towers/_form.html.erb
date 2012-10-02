@@ -5,7 +5,7 @@
     <%= f.input :numbnewant %>
     <%= f.input :oldcables %>
     <%= f.input :newcables %>
-    <%= f.input :site_id %>
+    <%= f.input :site_id, :as => :select, :collection => Site.all, :label_method => :format_name, :value_method => :id %>
   <% end %>
 
   <%= f.actions do %>

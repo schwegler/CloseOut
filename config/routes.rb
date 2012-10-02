@@ -1,13 +1,12 @@
 CloseOut::Application.routes.draw do
 
+  resources :radios
+
+  resources :antennas
+
   match '/help', :to => 'static_pages#help'
   match '/about', :to => 'static_pages#about'
   match '/contact', :to => 'static_pages#contact'
-
-  get "users/new"
-  match '/signup',  :to => 'users#new'
-
-  resources :towers
 
   resources :notes
 
@@ -17,11 +16,13 @@ CloseOut::Application.routes.draw do
 
   resources :posts
 
-  resources :sites
-
   resources :teches
   
-  resources :sites, :has_many => :teches
+  resources :sites, :has_many => [:teches, :towers, :radios, :antennas]
+  
+  resources :towers, :has_many => [:radios, :antennas]
+
+  resources :radios, :has_many => :antennas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -72,7 +73,7 @@ CloseOut::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-root :to => 'static_pages#home'
+root :to => 'sites#index'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

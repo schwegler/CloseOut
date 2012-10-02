@@ -1,69 +1,81 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @site.name %></h1>
+  </div>
+</div><div class="container">
 <p id="notice"><%= notice %></p>
 <div class="summary">
-<p>
-  <b>Name:</b>
-  <%= @site.name %>
-</p>
 
 <p>
-  <b>Number:</b>
+  <h2>Number</h2>
   <%= @site.number %>
 </p>
 
 <p>
-  <b>Location:</b><br />
+  <h2>Location</h2>
   <img src="http://maps.google.com/maps/api/staticmap?center=<%= @site.location %>&zoom=17&size=300x200&sensor=true&maptype=hybrid" style="width: 300px; height: 200px;" /><br />
   <i><a href="https://maps.google.com/maps?q=<%= @site.location %>" target="blank" ><%= @site.location %></a></i>
 </p>
 
 <p>
-  <b>Type:</b>
+  <h2>Type</h2>
   <%= @site.type %>
 </p>
 
 <p>
-  <b>County:</b>
+  <h2>County</h2>
   <%= @site.county %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <h2>Name</h2>
   <%=h @site.name %>
 </p>
  
 <p>
-  <b>Tech:</b>
+  <h2>Tech</h2>
   <%= link_to @site.tech.name, @site.tech %>
 </p>
 
 <p>
-  <b>SOWs:</b>
+  <h2>SOWs</h2>
      <ul>
      <% @site.scope_of_works.each do |scope_of_work| %>
         <li><span>Kind: </span><%=h scope_of_work.worktype%><br /><%= link_to scope_of_work.item, scope_of_work %><br /><span>Completed:</span> <%=h scope_of_work.completed%><br /><span>Contractor:</span> <%=h scope_of_work.contractor%><br /><%=h scope_of_work.created_at %></li>
   	 <% end unless @site.scope_of_works.nil? %>
   	 </ul>
-    <%= link_to "Create New SOW", new_scope_of_work_path %>
+    <i class="icon-file"></i> <%= link_to "Create New SOW", new_scope_of_work_path %>
 </p>
 
 <p>
-  <b>BOMs:</b>
+  <h2>BOMs</h2>
      <ul>
      <% @site.boms.each do |bom| %>
         <li><span>Kind: </span><%=h bom.worktype%><br /><%= link_to bom.item, bom %><br /><span>Qty. Est.:</span> <%=h bom.estq%><span>Qty. Used:</span> <%=h bom.usedq%><br /><span>Vendor:</span> <%=h bom.vendor%><br /><%=h bom.created_at %></li>
   	 <% end unless @site.boms.nil? %>
   	 </ul>
-    <%= link_to "Create New BOM", new_bom_path %>
+    <i class="icon-file"></i> <%= link_to "Create New BOM", new_bom_path %>
 </p>
 
 <p>
-  <b>Notes:</b>
+  <h2>Towers</h2>
+     <ul>
+     <% @site.towers.each do |tower| %>
+        <li><%= link_to tower.name, tower %></li>
+     <% end unless @site.towers.nil? %>
+     </ul>
+    <i class="icon-file"></i> <%= link_to "Create New Tower", new_tower_path %>
+</p>
+
+
+<p>
+  <h2>Notes</h2>
      <ul>
      <% @site.notes.each do |note| %>
         <li><%= link_to note.subject, note %><br /><%=h note.note %><br /><i><%=h note.created_at %></i></li>
   	 <% end unless @site.notes.nil? %>
   	 </ul>
-    <%= link_to "Create New Note", new_note_path %>
+    <i class="icon-file"></i> <%= link_to "Create New Note", new_note_path %>
 </p>
 
 <ul>

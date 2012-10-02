@@ -1,0 +1,81 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Radio:</b>
+  <%= @antenna.radio_id %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @antenna.desc %>
+</p>
+
+<p>
+  <b>Antenna:</b>
+  <%= @antenna.antenna %>
+</p>
+
+<p>
+  <b>Azimuth:</b>
+  <%= @antenna.azimuth %>
+</p>
+
+<p>
+  <b>Elevation:</b>
+  <%= @antenna.elevation %>
+</p>
+
+<p>
+  <b>Frequencytx:</b>
+  <%= @antenna.frequencytx %>
+</p>
+
+<p>
+  <b>Frequencyrx:</b>
+  <%= @antenna.frequencyrx %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @antenna.height %>
+</p>
+
+<p>
+  <b>Txpower:</b>
+  <%= @antenna.txpower %>
+</p>
+
+<p>
+  <b>Serialnumber:</b>
+  <%= @antenna.serialnumber %>
+</p>
+
+<p>
+  <b>Phasingcolor1:</b>
+  <%= @antenna.phasingcolor1 %>
+</p>
+
+<p>
+  <b>Phasingcolor2:</b>
+  <%= @antenna.phasingcolor2 %>
+</p>
+
+<p>
+  <b>Sectorsize:</b>
+  <%= @antenna.sectorsize %>
+</p>
+
+<p>
+  <b>Antennatype:</b>
+  <%= @antenna.antennatype %>
+</p>
+
+<p>
+  <b>Dishsize:</b>
+  <%= @antenna.dishsize %>
+</p>
+
+
+<%= link_to 'Edit', edit_antenna_path(@antenna) %> |
+<%= link_to 'Back', antennas_path %>

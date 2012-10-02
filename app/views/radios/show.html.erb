@@ -1,0 +1,21 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @radio.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @radio.desc %>
+</p>
+
+<p>
+  <b>Tower:</b>
+  <%= @radio.tower_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_radio_path(@radio) %> |
+<%= link_to 'Back', radios_path %>

@@ -1,34 +1,45 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @tower.name %></h1>
+  </div>
+</div><div class="container">
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <b>Name:</b>
-  <%= @tower.name %>
-</p>
+<h2>Antennas</h2>
+  <h3>Number of Existing Antennas</h3>
+  <p><%= @tower.numbeant %></p>
+  <h3>Number of New Antennas Installed</h3>
+  <p><%= @tower.numbnewant %></p>
 
-<p>
-  <b>Numbeant:</b>
-  <%= @tower.numbeant %>
-</p>
+<h2>Cables</h2>
+  <h3>Number/Type of Old Cables</h3>
+  <p><%= @tower.oldcables %></p>
+  <h3>Number/Type of New Cables</h3>
+  <p><%= @tower.newcables %></p>
 
-<p>
-  <b>Numbnewant:</b>
-  <%= @tower.numbnewant %>
-</p>
+<h2>Site</h2>
+  <p><%= link_to @tower.site.name, @tower.site %></p>
+  <h3>Tech</h3>
+  <p><%= link_to @tower.site.tech.name, @tower.site.tech %></p>
 
-<p>
-  <b>Oldcables:</b>
-  <%= @tower.oldcables %>
-</p>
+<h2>Radios</h2>
+<table class="pretty table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Desc</th>
+    <th></th>
+  </tr>
 
-<p>
-  <b>Newcables:</b>
-  <%= @tower.newcables %>
-</p>
-
-<p>
-  <b>Site:</b>
-  <%= @tower.site_id %>
-</p>
+<% for radio in @tower.radios %>
+  <tr>
+    <td><%= link_to radio.name, radio %></td>
+    <td><%= radio.desc %></td>
+    <td><%= link_to 'Edit', edit_radio_path(radio) %></td>
+  </tr>
+<% end %>
+</table>
+<p><i class="icon-file"></i> <%= link_to "Create New Radio", new_radio_path %></p>
 
 
 <%= link_to 'Edit', edit_tower_path(@tower) %> |

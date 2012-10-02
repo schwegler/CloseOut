@@ -25,7 +25,12 @@ class Site < ActiveRecord::Base
   has_many :scope_of_works, :inverse_of => :site
   has_many :boms, :inverse_of => :site
   has_many :notes, :inverse_of => :site
+  belongs_to :tower, :inverse_of => :sites
   has_many :towers, :inverse_of => :site
+  has_many :antennas
+  has_many :radios, :through => :towers
+
+
   self.inheritance_column = :ruby_type
 
  # getter for the "type" column
