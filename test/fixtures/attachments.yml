@@ -2,12 +2,9 @@
 #
 # Table name: attachments
 #
-#  id            :integer          not null, primary key
-#  description   :text
+#  descriptino   :text
 #  file          :string(255)
 #  attachable_id :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

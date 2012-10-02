@@ -29,7 +29,10 @@ class Site < ActiveRecord::Base
   has_many :towers, :inverse_of => :site
   has_many :antennas
   has_many :radios, :through => :towers
-
+  has_many :site_reviews
+  has_many :equipmentinracks
+  has_many :port_mapfor3750_mes
+  has_many :cabinets
 
   self.inheritance_column = :ruby_type
 

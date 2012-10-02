@@ -4,4 +4,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @tower %> |
-<%= link_to 'Back', towers_path %>
+<%= link_to 'Back', towers_path %> |
+<%= link_to 'Destroy', @tower, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

@@ -1,0 +1,48 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>All Site Reviews</h1>
+    <p class="lead">Select a review for more information.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="page-header"><h1>Reviews Table</h1>
+
+<table "pretty table table-striped">
+  <tr>
+    <th>Site</th>
+    <th>Installstart</th>
+    <th>Installcomplete</th>
+    <th>Turnup</th>
+    <th>Elecinsp</th>
+    <th>Reviewedby</th>
+    <th>Datereviewed</th>
+    <th>Acctepted</th>
+    <th>Dateaccepted</th>
+    <th>Reasonrejected</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @site_reviews.each do |site_review| %>
+  <tr>
+    <td><%= site_review.site_id %></td>
+    <td><%= site_review.installstart %></td>
+    <td><%= site_review.installcomplete %></td>
+    <td><%= site_review.turnup %></td>
+    <td><%= site_review.elecinsp %></td>
+    <td><%= site_review.reviewedby %></td>
+    <td><%= site_review.datereviewed %></td>
+    <td><%= site_review.acctepted %></td>
+    <td><%= site_review.dateaccepted %></td>
+    <td><%= site_review.reasonrejected %></td>
+    <td><%= link_to 'Show', site_review %></td>
+    <td><%= link_to 'Edit', edit_site_review_path(site_review) %></td>
+    <td><%= link_to 'Destroy', site_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Site review', new_site_review_path %>

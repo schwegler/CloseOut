@@ -1,20 +1,20 @@
 <%= semantic_form_for @antenna do |f| %>
   <%= f.inputs do %>
-    <%= f.input :radio_id %>
-    <%= f.input :desc %>
-    <%= f.input :antenna %>
-    <%= f.input :azimuth %>
-    <%= f.input :elevation %>
-    <%= f.input :frequencytx %>
-    <%= f.input :frequencyrx %>
-    <%= f.input :height %>
-    <%= f.input :txpower %>
-    <%= f.input :serialnumber %>
-    <%= f.input :phasingcolor1 %>
-    <%= f.input :phasingcolor2 %>
-    <%= f.input :sectorsize %>
-    <%= f.input :antennatype %>
-    <%= f.input :dishsize %>
+    <%= f.input :radio_id, :as => :select, :collection => Radio.all, :label_method => :format_name, :value_method => :id %>
+    <%= f.input :desc, :label => "" %>
+    <%= f.input :antenna, :label => "" %>
+    <%= f.input :azimuth, :label => "" %>
+    <%= f.input :elevation, :label => "" %>
+    <%= f.input :frequencytx, :label => "" %>
+    <%= f.input :frequencyrx, :label => "" %>
+    <%= f.input :height, :label => "" %>
+    <%= f.input :txpower, :label => "" %>
+    <%= f.input :serialnumber, :label => "" %>
+    <%= f.input :phasingcolor1, :label => "" %>
+    <%= f.input :phasingcolor2, :label => "" %>
+    <%= f.input :sectorsize, :label => "" %>
+    <%= f.input :antennatype, :label => "" %>
+    <%= f.input :dishsize, :label => "" %>
   <% end %>
 
   <%= f.actions do %>

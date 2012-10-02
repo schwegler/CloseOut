@@ -1,0 +1,36 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cabinet:</b>
+  <%= @port_mapfor3750_me.cabinet_id %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @port_mapfor3750_me.site_id %>
+</p>
+
+<p>
+  <b>Port:</b>
+  <%= @port_mapfor3750_me.port %>
+</p>
+
+<p>
+  <b>Connecteddevice:</b>
+  <%= @port_mapfor3750_me.connecteddevice %>
+</p>
+
+<p>
+  <b>Swport:</b>
+  <%= @port_mapfor3750_me.swport %>
+</p>
+
+<p>
+  <b>Patchpanelport:</b>
+  <%= @port_mapfor3750_me.patchpanelport %>
+</p>
+
+
+<%= link_to 'Edit', edit_port_mapfor3750_me_path(@port_mapfor3750_me) %> |
+<%= link_to 'Back', port_mapfor3750_mes_path %>

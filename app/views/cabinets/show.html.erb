@@ -1,0 +1,84 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= link_to @cabinet.site.name, @cabinet.site %> Cabinet</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="page-header"></div>
+<p id="notice"><%= notice %></p>
+
+<h2>Equpment in Rack</h2>
+<table class="pretty table table-striped">
+  <tr>
+    <th>Item</th>
+    <th>Serial</th>
+    <th></th>
+  </tr>
+
+<% for equipmentinrack in @cabinet.equipmentinracks %>
+  <tr>
+    <td><%= link_to equipmentinrack.item, equipmentinrack %></td>
+    <td><%= equipmentinrack.serialnumber %></td>
+    <td><%= link_to 'Edit', edit_equipmentinrack_path(equipmentinrack) %></td>
+  </tr>
+<% end %>
+</table>
+<p><i class="icon-file"></i> <%= link_to "Add Item", new_equipmentinrack_path %></p>
+
+<h2>Port Map for 3750ME</h2>
+<table class="pretty table table-striped">
+  <tr>
+    <th>3650 Port</th>
+    <th>Connected Device</th>
+    <th>Sw Port</th>
+    <th>Patch Panel Port</th>
+    <th></th>
+  </tr>
+
+<% for port_mapfor3750_me in @cabinet.port_mapfor3750_mes %>
+  <tr>
+    <td><%= link_to port_mapfor3750_me.port, port_mapfor3750_me %></td>
+    <td><%= port_mapfor3750_me.connecteddevice %></td>
+    <td><%= port_mapfor3750_me.swport %></td>
+    <td><%= port_mapfor3750_me.patchpanelport %></td>
+    <td><%= link_to 'Edit', edit_port_mapfor3750_me_path(port_mapfor3750_me) %></td>
+  </tr>
+<% end %>
+</table>
+<p><i class="icon-file"></i> <%= link_to "Add Port", new_port_mapfor3750_me_path %></p>
+
+<h3>Picture Checklist</h3>
+<p><i class="icon-question-sign"></i> <em>Post/Find Pictures on Each Site's Page</em></p>
+
+<p>
+  <b>Equipment Installed in Cabinet:</b>
+  <%= @cabinet.equipinstalledpicture %>
+</p>
+
+<p>
+  <b>On Raised Platform/Pad:</b>
+  <%= @cabinet.onraisedplatformpadpicture %>
+</p>
+
+<p>
+  <b>Cabling from Cabinet Across Ice Bridge:</b>
+  <%= @cabinet.cablingfromcabinetacrossicebridgepicture %>
+</p>
+
+<p>
+  <b>Patch Cabling in Cabinet:</b>
+  <%= @cabinet.patchcablingpicture %>
+</p>
+
+<p>
+  <b>Labels on Equipment:</b>
+  <%= @cabinet.labelsonequippicture %>
+</p>
+
+<p>
+  <b>Dressed Cables in Cabinet:</b>
+  <%= @cabinet.dressedcablespicture %>
+</p>
+
+<%= link_to 'Edit', edit_cabinet_path(@cabinet) %> |
+<%= link_to 'Back', cabinets_path %>

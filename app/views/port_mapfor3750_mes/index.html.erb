@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Listing port_mapfor3750_mes</h1>
+
+<table>
+  <tr>
+    <th>Cabinet</th>
+    <th>Site</th>
+    <th>Port</th>
+    <th>Connecteddevice</th>
+    <th>Swport</th>
+    <th>Patchpanelport</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @port_mapfor3750_mes.each do |port_mapfor3750_me| %>
+  <tr>
+    <td><%= port_mapfor3750_me.cabinet_id %></td>
+    <td><%= port_mapfor3750_me.site_id %></td>
+    <td><%= port_mapfor3750_me.port %></td>
+    <td><%= port_mapfor3750_me.connecteddevice %></td>
+    <td><%= port_mapfor3750_me.swport %></td>
+    <td><%= port_mapfor3750_me.patchpanelport %></td>
+    <td><%= link_to 'Show', port_mapfor3750_me %></td>
+    <td><%= link_to 'Edit', edit_port_mapfor3750_me_path(port_mapfor3750_me) %></td>
+    <td><%= link_to 'Destroy', port_mapfor3750_me, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Port mapfor3750 me', new_port_mapfor3750_me_path %>

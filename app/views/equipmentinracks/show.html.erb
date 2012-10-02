@@ -1,0 +1,26 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cabinet:</b>
+  <%= @equipmentinrack.cabinet_id %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @equipmentinrack.site_id %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @equipmentinrack.item %>
+</p>
+
+<p>
+  <b>Serialnumber:</b>
+  <%= @equipmentinrack.serialnumber %>
+</p>
+
+
+<%= link_to 'Edit', edit_equipmentinrack_path(@equipmentinrack) %> |
+<%= link_to 'Back', equipmentinracks_path %>

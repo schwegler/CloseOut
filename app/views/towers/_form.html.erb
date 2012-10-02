@@ -1,10 +1,10 @@
 <%= semantic_form_for @tower do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%= f.input :numbeant %>
-    <%= f.input :numbnewant %>
-    <%= f.input :oldcables %>
-    <%= f.input :newcables %>
+    <%= f.input :numbeant, :label => "Existing Antennas" %>
+    <%= f.input :numbnewant, :label => "New Antennas Installed"  %>
+    <%= f.input :oldcables, :label => "Number and Type of Old Cables&nbsp;Removed"  %>
+    <%= f.input :newcables, :label => "Number and Type of New Cables&nbsp;Installed"  %>
     <%= f.input :site_id, :as => :select, :collection => Site.all, :label_method => :format_name, :value_method => :id %>
   <% end %>
 

@@ -1,5 +1,13 @@
 CloseOut::Application.routes.draw do
 
+  resources :cabinets
+
+  resources :equipmentinracks
+
+  resources :port_mapfor3750_mes
+
+  resources :site_reviews
+
   resources :radios
 
   resources :antennas

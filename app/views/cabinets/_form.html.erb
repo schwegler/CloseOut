@@ -1,0 +1,18 @@
+<%= semantic_form_for @cabinet do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :site_id, :as => :select, :collection => Site.all, :label_method => :format_name, :value_method => :id %>
+    <%= f.input :name %>
+    <li class="input optional"><h3>Picture Checklist</h3>
+    <p><i class="icon-question-sign"></i> <em>Post/Find Pictures on Each Site's Page</em></p></li>
+    <%= f.input :equipinstalledpicture, :label => "Equipment Installed in Cabinet" %>
+    <%= f.input :onraisedplatformpadpicture, :label => "On Raised Platform/Pad:" %>
+    <%= f.input :cablingfromcabinetacrossicebridgepicture, :label => "Cabling from Cabinet Across Ice Bridge" %>
+    <%= f.input :patchcablingpicture, :label => "Patch Cabling in Cabinet" %>
+    <%= f.input :labelsonequippicture, :label => "Labels on Equipment" %>
+    <%= f.input :dressedcablespicture, :label => "Dressed Cables in Cabinet" %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

@@ -59,6 +59,7 @@
 
 <p>
   <h2>Towers</h2>
+  <i class="icon-question-sign"></i> <em>Click on a tower for Radio/Antenna Info</em>
      <ul>
      <% @site.towers.each do |tower| %>
         <li><%= link_to tower.name, tower %></li>
@@ -67,6 +68,15 @@
     <i class="icon-file"></i> <%= link_to "Create New Tower", new_tower_path %>
 </p>
 
+<p>
+  <h2>Cabinets</h2>
+     <ul>
+     <% @site.cabinets.each do |cabinet| %>
+        <li><%= link_to cabinet.name, cabinet %></li>
+     <% end unless @site.cabinets.nil? %>
+     </ul>
+    <i class="icon-file"></i> <%= link_to "Create New Cabinet", new_cabinet_path %>
+</p>
 
 <p>
   <h2>Notes</h2>
@@ -75,6 +85,16 @@
         <li><%= link_to note.subject, note %><br /><%=h note.note %><br /><i><%=h note.created_at %></i></li>
   	 <% end unless @site.notes.nil? %>
   	 </ul>
+    <i class="icon-file"></i> <%= link_to "Create New Note", new_note_path %>
+</p>
+
+<p>
+  <h2>Reviews</h2>
+     <ul>
+     <% @site.site_reviews.each do |site_review| %>
+        <li><%= link_to site_review.datereviewed, site_review %></li>
+     <% end unless @site.site_reviews.nil? %>
+     </ul>
     <i class="icon-file"></i> <%= link_to "Create New Note", new_note_path %>
 </p>
 

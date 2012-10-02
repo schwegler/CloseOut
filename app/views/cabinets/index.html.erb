@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Listing cabinets</h1>
+
+<table>
+  <tr>
+    <th>Site</th>
+    <th>Onraisedplatformpadpicture</th>
+    <th>Cablingfromcabinetacrossicebridgepicture</th>
+    <th>Patchcablingpicture</th>
+    <th>Labelsonequippicture</th>
+    <th>Dressedcablespicture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cabinets.each do |cabinet| %>
+  <tr>
+    <td><%= cabinet.site_id %></td>
+    <td><%= cabinet.onraisedplatformpadpicture %></td>
+    <td><%= cabinet.cablingfromcabinetacrossicebridgepicture %></td>
+    <td><%= cabinet.patchcablingpicture %></td>
+    <td><%= cabinet.labelsonequippicture %></td>
+    <td><%= cabinet.dressedcablespicture %></td>
+    <td><%= link_to 'Show', cabinet %></td>
+    <td><%= link_to 'Edit', edit_cabinet_path(cabinet) %></td>
+    <td><%= link_to 'Destroy', cabinet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cabinet', new_cabinet_path %>

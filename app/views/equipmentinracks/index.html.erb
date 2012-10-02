@@ -1,0 +1,30 @@
+<div class="container">
+<h1>Listing equipmentinracks</h1>
+
+<table>
+  <tr>
+    <th>Cabinet</th>
+    <th>Site</th>
+    <th>Item</th>
+    <th>Serialnumber</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @equipmentinracks.each do |equipmentinrack| %>
+  <tr>
+    <td><%= equipmentinrack.cabinet_id %></td>
+    <td><%= equipmentinrack.site_id %></td>
+    <td><%= equipmentinrack.item %></td>
+    <td><%= equipmentinrack.serialnumber %></td>
+    <td><%= link_to 'Show', equipmentinrack %></td>
+    <td><%= link_to 'Edit', edit_equipmentinrack_path(equipmentinrack) %></td>
+    <td><%= link_to 'Destroy', equipmentinrack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Equipmentinrack', new_equipmentinrack_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002131752) do
+ActiveRecord::Schema.define(:version => 20121002182926) do
 
   create_table "antennas", :force => true do |t|
     t.integer  "radio_id"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(:version => 20121002131752) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "attachments", :id => false, :force => true do |t|
+    t.text    "descriptino"
+    t.string  "file"
+    t.integer "attachable_id"
+  end
+
   create_table "boms", :force => true do |t|
     t.string   "worktype"
     t.text     "item"
@@ -43,6 +49,20 @@ ActiveRecord::Schema.define(:version => 20121002131752) do
     t.datetime "updated_at", :null => false
     t.integer  "site_id"
     t.integer  "tech_id"
+  end
+
+  create_table "cabinets", :force => true do |t|
+    t.integer  "site_id"
+    t.boolean  "equipinstalledpicture"
+    t.boolean  "onraisedplatformpadpicture"
+    t.boolean  "cablingfromcabinetacrossicebridgepicture"
+    t.boolean  "patchcablingpicture"
+    t.boolean  "labelsonequippicture"
+    t.boolean  "dressedcablespicture"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "description"
+    t.string   "name"
   end
 
   create_table "clips", :force => true do |t|
@@ -56,6 +76,15 @@ ActiveRecord::Schema.define(:version => 20121002131752) do
 
   add_index "clips", ["attachable_id"], :name => "index_clips_on_attachable_id"
 
+  create_table "equipmentinracks", :force => true do |t|
+    t.integer  "cabinet_id"
+    t.integer  "site_id"
+    t.string   "item"
+    t.string   "serialnumber"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "notes", :force => true do |t|
     t.string   "subject"
     t.datetime "date"
@@ -66,6 +95,17 @@ ActiveRecord::Schema.define(:version => 20121002131752) do
     t.datetime "created_on"
     t.integer  "site_id"
     t.integer  "tech_id"
+  end
+
+  create_table "port_mapfor3750_mes", :force => true do |t|
+    t.integer  "cabinet_id"
+    t.integer  "site_id"
+    t.string   "port"
+    t.string   "connecteddevice"
+    t.string   "swport"
+    t.string   "patchpanelport"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -94,6 +134,21 @@ ActiveRecord::Schema.define(:version => 20121002131752) do
     t.datetime "updated_at", :null => false
     t.integer  "tech_id"
     t.integer  "site_id"
+  end
+
+  create_table "site_reviews", :force => true do |t|
+    t.integer  "site_id"
+    t.date     "installstart"
+    t.date     "installcomplete"
+    t.date     "turnup"
+    t.date     "elecinsp"
+    t.string   "reviewedby"
+    t.date     "datereviewed"
+    t.boolean  "acctepted"
+    t.date     "dateaccepted"
+    t.text     "reasonrejected"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "sites", :force => true do |t|

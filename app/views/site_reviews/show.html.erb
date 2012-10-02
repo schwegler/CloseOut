@@ -1,0 +1,56 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Site:</b>
+    <%= link_to @site_review.site.name, @site_review.site %>
+</p>
+
+<p>
+  <b>Install Start:</b>
+  <%= @site_review.installstart %>
+</p>
+
+<p>
+  <b>Install Complete:</b>
+  <%= @site_review.installcomplete %>
+</p>
+
+<p>
+  <b>Turn Up:</b>
+  <%= @site_review.turnup %>
+</p>
+
+<p>
+  <b>Electrical Inspection:</b>
+  <%= @site_review.elecinsp %>
+</p>
+
+<p>
+  <b>Reviewed By:</b>
+  <%= @site_review.reviewedby %>
+</p>
+
+<p>
+  <b>Date Reviewed:</b>
+  <%= @site_review.datereviewed %>
+</p>
+
+<p>
+  <b>Acctepted:</b>
+  <%= @site_review.acctepted %>
+</p>
+
+<p>
+  <b>Date Accepted:</b>
+  <%= @site_review.dateaccepted %>
+</p>
+
+<p>
+  <b>Reason Rejected:</b>
+  <%= @site_review.reasonrejected %>
+</p>
+
+
+<%= link_to 'Edit', edit_site_review_path(@site_review) %> |
+<%= link_to 'Back', site_reviews_path %>

@@ -1,0 +1,2 @@
+module EquipmentinracksHelper
+end
