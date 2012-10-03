@@ -1,14 +1,16 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>All Cabinets</h1>
+  </div>
+</div>
 <div class="container">
-<h1>Listing cabinets</h1>
+  <div class="page-header"><h1>Cabinets Table</h1></div>
+<p id="notice"><%= notice %></p>
 
-<table>
+<table class="pretty table table-striped">
   <tr>
+    <th>Cabinet Name</th>
     <th>Site</th>
-    <th>Onraisedplatformpadpicture</th>
-    <th>Cablingfromcabinetacrossicebridgepicture</th>
-    <th>Patchcablingpicture</th>
-    <th>Labelsonequippicture</th>
-    <th>Dressedcablespicture</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,12 +18,8 @@
 
 <% @cabinets.each do |cabinet| %>
   <tr>
-    <td><%= cabinet.site_id %></td>
-    <td><%= cabinet.onraisedplatformpadpicture %></td>
-    <td><%= cabinet.cablingfromcabinetacrossicebridgepicture %></td>
-    <td><%= cabinet.patchcablingpicture %></td>
-    <td><%= cabinet.labelsonequippicture %></td>
-    <td><%= cabinet.dressedcablespicture %></td>
+    <td><%= link_to cabinet.name, cabinet %></td>
+    <td><%= link_to cabinet.site.name, cabinet.site %></td>
     <td><%= link_to 'Show', cabinet %></td>
     <td><%= link_to 'Edit', edit_cabinet_path(cabinet) %></td>
     <td><%= link_to 'Destroy', cabinet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,25 +1,11 @@
-<%= form_for(@tech) do |f| %>
-  <% if @tech.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tech.errors.count, "error") %> prohibited this tech from being saved:</h2>
+<%= semantic_form_for @tech do |f| %>
+	<%= f.inputs do %>
+	    <%= f.input :name %><br />
+	    <%= f.input :phone %><br />
+	<% end %>
+	<%= f.actions do %>
+	    <%= f.action :submit, :as => :input, :label => "Submit" %>
+	    <%= f.action :cancel, :label => "Cancel" %>
+    <%end %>
 
-      <ul>
-      <% @tech.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

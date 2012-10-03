@@ -11,14 +11,12 @@
     <th>Name</th>
     <th>Site</th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @towers.each do |tower| %>
   <tr>
-    <td><%= tower.name %></td>
-    <td><%= tower.site_id %></td>
-    <td><%= link_to 'Show', tower %></td>
+    <td><%= link_to tower.name, tower %></td>
+    <td><%= link_to tower.site.name, tower.site %></td>
     <td><%= link_to 'Edit', edit_tower_path(tower) %></td>
   </tr>
 <% end %>

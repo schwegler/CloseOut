@@ -5,23 +5,10 @@
 </div><div class="container">
 <p id="notice"><%= notice %></p>
 <div class="container">
-
-<h2>Antennas</h2>
-  <h3>Number of Existing Antennas</h3>
-  <p><%= @tower.numbeant %></p>
-  <h3>Number of New Antennas Installed</h3>
-  <p><%= @tower.numbnewant %></p>
-
-<h2>Cables</h2>
-  <h3>Number/Type of Old Cables</h3>
-  <p><%= @tower.oldcables %></p>
-  <h3>Number/Type of New Cables</h3>
-  <p><%= @tower.newcables %></p>
-
-<h2>Site</h2>
-  <p><%= link_to @tower.site.name, @tower.site %></p>
-  <h3>Tech</h3>
-  <p><%= link_to @tower.site.tech.name, @tower.site.tech %></p>
+<div class="page-header">
+<h1>Site: <%= link_to @tower.site.name, @tower.site %></h2>
+  <p class="lead">Tech: <%= link_to @tower.site.tech.name, @tower.site.tech %></p>
+</div>
 
 <h2>Radios</h2>
 <table class="pretty table table-striped">
@@ -35,12 +22,39 @@
   <tr>
     <td><%= link_to radio.name, radio %></td>
     <td><%= radio.desc %></td>
-    <td><%= link_to 'Edit', edit_radio_path(radio) %></td>
   </tr>
 <% end %>
 </table>
 <p><i class="icon-file"></i> <%= link_to "Create New Radio", new_radio_path %></p>
 
+<h2>Antennas</h2>
+<table class="pretty table table-striped">
+  <tr>
+    <th>Antenna</th>
+    <th>On Radio</th>
+    <th>Description</th>
+    <th>Antenna Type</th>
+  </tr>
+<% for antenna in @tower.antennas %>
+  <tr>
+    <td><%= link_to antenna.antenna, antenna %></td>
+    <td><%= link_to antenna.radio.name, antenna.radio %></td>
+    <td><%= antenna.desc %></td>
+    <td><%= antenna.antennatype %></td>
+  </tr>
+<% end %>
+</table>
+<p><i class="icon-file"></i> <%= link_to "Create New Antenna", new_antenna_path %></p>
+  <h3>Number of Existing Antennas</h3>
+  <p><%= @tower.numbeant %></p>
+  <h3>Number of New Antennas Installed</h3>
+  <p><%= @tower.numbnewant %></p>
+
+<h2>Cables</h2>
+  <h3>Number/Type of Old Cables</h3>
+  <p><%= @tower.oldcables %></p>
+  <h3>Number/Type of New Cables</h3>
+  <p><%= @tower.newcables %></p>
 
 <%= link_to 'Edit', edit_tower_path(@tower) %> |
 <%= link_to 'Back', towers_path %>

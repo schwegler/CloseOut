@@ -12,8 +12,11 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= 'active' if current_page?(help_path) %>"><%= link_to "Help", help_path %></li>
-          <li class=""><%= link_to "Sign in", '#' %></li>
+          <li class="<%= 'active' if current_page?(sites_path) %>"><%= link_to "Sites", sites_path %></li>
+          <li class="<%= 'active' if current_page?(towers_path) %>"><%= link_to "Towers", towers_path %></li>
+          <li class="<%= 'active' if current_page?(teches_path) %>"><%= link_to "Techs", teches_path %></li>
+          <li class="<%= 'active' if current_page?(cabinets_path) %>"><%= link_to "Cabinets", cabinets_path %></li>
+          <li class="<%= 'active' if current_page?(reviews_path) %>"><%= link_to "Reviews", reviews_path %></li>
         </ul>
       </div>
     </div>

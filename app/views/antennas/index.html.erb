@@ -1,48 +1,29 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>All Antennas</h1>
+    <p class="lead">Select an antenna for more information.</p>
+  </div>
+</div>
 <div class="container">
-<h1>Listing antennas</h1>
+  <div class="page-header"><h1>Antennas Table</h1></div>
+<p id="notice"><%= notice %></p>
 
 <table class="pretty table table-striped">
   <tr>
-    <th>Radio</th>
-    <th>Desc</th>
     <th>Antenna</th>
-    <th>Azimuth</th>
-    <th>Elevation</th>
-    <th>Frequencytx</th>
-    <th>Frequencyrx</th>
-    <th>Height</th>
-    <th>Txpower</th>
-    <th>Serialnumber</th>
-    <th>Phasingcolor1</th>
-    <th>Phasingcolor2</th>
-    <th>Sectorsize</th>
-    <th>Antennatype</th>
-    <th>Dishsize</th>
-    <th></th>
-    <th></th>
+    <th>Description</th>
+    <th>Radio</th>
+    <th>Antenna Type</th>
     <th></th>
   </tr>
 
 <% @antennas.each do |antenna| %>
   <tr>
-    <td><%= antenna.radio_id %></td>
+    <td><%= link_to antenna.antenna, antenna %></td>
     <td><%= antenna.desc %></td>
-    <td><%= antenna.antenna %></td>
-    <td><%= antenna.azimuth %></td>
-    <td><%= antenna.elevation %></td>
-    <td><%= antenna.frequencytx %></td>
-    <td><%= antenna.frequencyrx %></td>
-    <td><%= antenna.height %></td>
-    <td><%= antenna.txpower %></td>
-    <td><%= antenna.serialnumber %></td>
-    <td><%= antenna.phasingcolor1 %></td>
-    <td><%= antenna.phasingcolor2 %></td>
-    <td><%= antenna.sectorsize %></td>
+    <td><%= link_to antenna.radio.name, antenna.radio %></td>
     <td><%= antenna.antennatype %></td>
-    <td><%= antenna.dishsize %></td>
-    <td><%= link_to 'Show', antenna %></td>
     <td><%= link_to 'Edit', edit_antenna_path(antenna) %></td>
-    <td><%= link_to 'Destroy', antenna, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

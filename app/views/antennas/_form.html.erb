@@ -1,6 +1,7 @@
 <%= semantic_form_for @antenna do |f| %>
   <%= f.inputs do %>
     <%= f.input :radio_id, :as => :select, :collection => Radio.all, :label_method => :format_name, :value_method => :id %>
+    <%= f.input :tower_id, :as => :select, :collection => Tower.all, :label_method => :format_name, :value_method => :id %>
     <%= f.input :desc, :label => "" %>
     <%= f.input :antenna, :label => "" %>
     <%= f.input :azimuth, :label => "" %>
@@ -18,6 +19,8 @@
   <% end %>
 
   <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
+    <%= f.action :submit, :as => :input, :label => "Submit" %>
+    <%= f.action :cancel, :label => "Cancel" %>
+    <li><%= link_to 'Destroy', @antenna, method: :delete, :class => "btn action btn-danger", data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 <% end %>

@@ -1,9 +1,12 @@
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Editing <%= @tech.name %></h1>
+  </div>
+</div>
 <div class="container">
-<h1>Editing tech</h1>
+<p id="notice"><%= notice %></p>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @tech %> |
-<%= link_to 'Back', teches_path %> | 
-<%= link_to 'Destroy', tech, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<%= link_to 'Destroy', @tech, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 

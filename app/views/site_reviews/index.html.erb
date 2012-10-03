@@ -5,38 +5,26 @@
   </div>
 </div>
 <div class="container">
-  <div class="page-header"><h1>Reviews Table</h1>
+  <div class="page-header"><h1>Reviews Table</h1></div>
 
-<table "pretty table table-striped">
+<table class="pretty table table-striped">
   <tr>
     <th>Site</th>
-    <th>Installstart</th>
-    <th>Installcomplete</th>
-    <th>Turnup</th>
-    <th>Elecinsp</th>
-    <th>Reviewedby</th>
-    <th>Datereviewed</th>
-    <th>Acctepted</th>
-    <th>Dateaccepted</th>
-    <th>Reasonrejected</th>
-    <th></th>
+    <th>Reviewed By</th>
+    <th>Date Reviewed</th>
+    <th>Accepted</th>
+    <th>Date Accepted</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @site_reviews.each do |site_review| %>
   <tr>
-    <td><%= site_review.site_id %></td>
-    <td><%= site_review.installstart %></td>
-    <td><%= site_review.installcomplete %></td>
-    <td><%= site_review.turnup %></td>
-    <td><%= site_review.elecinsp %></td>
+    <td><%= link_to site_review.site.name, site_review.site %></td>
     <td><%= site_review.reviewedby %></td>
     <td><%= site_review.datereviewed %></td>
     <td><%= site_review.acctepted %></td>
     <td><%= site_review.dateaccepted %></td>
-    <td><%= site_review.reasonrejected %></td>
-    <td><%= link_to 'Show', site_review %></td>
     <td><%= link_to 'Edit', edit_site_review_path(site_review) %></td>
     <td><%= link_to 'Destroy', site_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

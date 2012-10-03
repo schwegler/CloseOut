@@ -14,7 +14,12 @@ CloseOut::Application.routes.draw do
 
   match '/help', :to => 'static_pages#help'
   match '/about', :to => 'static_pages#about'
+  match '/reviews', :to => 'site_reviews#index'
+  match '/towers', :to => 'towers#index'
+  match '/techs', :to => 'teches#index'
+  match '/cabinets', :to => 'cabinets#index'
   match '/contact', :to => 'static_pages#contact'
+  match '/login', :to => 'lock#login'
 
   resources :notes
 

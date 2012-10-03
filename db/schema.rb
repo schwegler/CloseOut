@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002182926) do
+ActiveRecord::Schema.define(:version => 20121002211637) do
 
   create_table "antennas", :force => true do |t|
     t.integer  "radio_id"
@@ -31,12 +31,7 @@ ActiveRecord::Schema.define(:version => 20121002182926) do
     t.string   "dishsize"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "attachments", :id => false, :force => true do |t|
-    t.text    "descriptino"
-    t.string  "file"
-    t.integer "attachable_id"
+    t.integer  "tower_id"
   end
 
   create_table "boms", :force => true do |t|

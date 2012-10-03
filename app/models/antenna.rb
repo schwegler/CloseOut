@@ -23,6 +23,7 @@
 #
 
 class Antenna < ActiveRecord::Base
-  attr_accessible :antenna, :antennatype, :azimuth, :desc, :dishsize, :elevation, :frequencyrx, :frequencytx, :height, :phasingcolor1, :phasingcolor2, :radio_id, :sectorsize, :serialnumber, :txpower
+  attr_accessible :antenna, :antennatype, :azimuth, :desc, :dishsize, :elevation, :frequencyrx, :frequencytx, :height, :phasingcolor1, :phasingcolor2, :radio_id, :sectorsize, :serialnumber, :txpower, :tower_id
   belongs_to :radio, :inverse_of => :antennas
+  belongs_to :tower, :inverse_of => :antenna
 end
